@@ -3,27 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BDDCAC857A29756AC00F1EB /* Pods_FINCH_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31776B282731297600B746FC /* Pods_FINCH_Test.framework */; };
 		75092EF026A88CC80039C6D6 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75092EEF26A88CC80039C6D6 /* FeedViewController.swift */; };
-		75092EF226A88D330039C6D6 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75092EF126A88D330039C6D6 /* FeedCollectionViewCell.swift */; };
+		75092EF226A88D330039C6D6 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75092EF126A88D330039C6D6 /* FeedTableViewCell.swift */; };
 		7513B92A26A87EFC00C3CF01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7513B92926A87EFC00C3CF01 /* AppDelegate.swift */; };
-		7513B92C26A87EFC00C3CF01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7513B92B26A87EFC00C3CF01 /* SceneDelegate.swift */; };
 		7513B93326A87EFD00C3CF01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7513B93226A87EFD00C3CF01 /* Assets.xcassets */; };
 		7513B93626A87EFD00C3CF01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7513B93426A87EFD00C3CF01 /* LaunchScreen.storyboard */; };
+		75C00E8426A8CD9D0052E464 /* FeedViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C00E8326A8CD9D0052E464 /* FeedViewControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31776B282731297600B746FC /* Pods_FINCH_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FINCH_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DC30F3CFF2C8B7223613DAA /* Pods-FINCH Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FINCH Test.release.xcconfig"; path = "Target Support Files/Pods-FINCH Test/Pods-FINCH Test.release.xcconfig"; sourceTree = "<group>"; };
 		75092EEF26A88CC80039C6D6 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		75092EF126A88D330039C6D6 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		75092EF126A88D330039C6D6 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		7513B92626A87EFC00C3CF01 /* FINCH Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FINCH Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7513B92926A87EFC00C3CF01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7513B92B26A87EFC00C3CF01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7513B93226A87EFD00C3CF01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7513B93526A87EFD00C3CF01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7513B93726A87EFD00C3CF01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75C00E8326A8CD9D0052E464 /* FeedViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerExtensions.swift; sourceTree = "<group>"; };
+		F19124CA2C429289A9113F3D /* Pods-FINCH Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FINCH Test.debug.xcconfig"; path = "Target Support Files/Pods-FINCH Test/Pods-FINCH Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BDDCAC857A29756AC00F1EB /* Pods_FINCH_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00EEEF81DEA5A8660813AD06 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F19124CA2C429289A9113F3D /* Pods-FINCH Test.debug.xcconfig */,
+				6DC30F3CFF2C8B7223613DAA /* Pods-FINCH Test.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7513B91D26A87EFC00C3CF01 = {
 			isa = PBXGroup;
 			children = (
 				7513B92826A87EFC00C3CF01 /* FINCH Test */,
 				7513B92726A87EFC00C3CF01 /* Products */,
+				00EEEF81DEA5A8660813AD06 /* Pods */,
+				CA742746475171C99883C986 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				7513B92926A87EFC00C3CF01 /* AppDelegate.swift */,
-				7513B92B26A87EFC00C3CF01 /* SceneDelegate.swift */,
 				7513B93226A87EFD00C3CF01 /* Assets.xcassets */,
 				7513B93426A87EFD00C3CF01 /* LaunchScreen.storyboard */,
 			);
@@ -78,8 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				7513B94026A882E500C3CF01 /* Feed */,
-				7513B94126A882F200C3CF01 /* Add */,
-				7513B94226A8830800C3CF01 /* Details */,
 			);
 			path = WorkFlow;
 			sourceTree = "<group>";
@@ -88,23 +101,18 @@
 			isa = PBXGroup;
 			children = (
 				75092EEF26A88CC80039C6D6 /* FeedViewController.swift */,
-				75092EF126A88D330039C6D6 /* FeedCollectionViewCell.swift */,
+				75092EF126A88D330039C6D6 /* FeedTableViewCell.swift */,
+				75C00E8326A8CD9D0052E464 /* FeedViewControllerExtensions.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
 		};
-		7513B94126A882F200C3CF01 /* Add */ = {
+		CA742746475171C99883C986 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				31776B282731297600B746FC /* Pods_FINCH_Test.framework */,
 			);
-			path = Add;
-			sourceTree = "<group>";
-		};
-		7513B94226A8830800C3CF01 /* Details */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Details;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7513B93A26A87EFD00C3CF01 /* Build configuration list for PBXNativeTarget "FINCH Test" */;
 			buildPhases = (
+				81C60BB93F447EE29BCA92A9 /* [CP] Check Pods Manifest.lock */,
 				7513B92226A87EFC00C3CF01 /* Sources */,
 				7513B92326A87EFC00C3CF01 /* Frameworks */,
 				7513B92426A87EFC00C3CF01 /* Resources */,
+				11BBAB90593B879E388EBF69 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,15 +181,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11BBAB90593B879E388EBF69 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FINCH Test/Pods-FINCH Test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FINCH Test/Pods-FINCH Test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FINCH Test/Pods-FINCH Test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81C60BB93F447EE29BCA92A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FINCH Test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7513B92226A87EFC00C3CF01 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75C00E8426A8CD9D0052E464 /* FeedViewControllerExtensions.swift in Sources */,
 				7513B92A26A87EFC00C3CF01 /* AppDelegate.swift in Sources */,
 				75092EF026A88CC80039C6D6 /* FeedViewController.swift in Sources */,
-				75092EF226A88D330039C6D6 /* FeedCollectionViewCell.swift in Sources */,
-				7513B92C26A87EFC00C3CF01 /* SceneDelegate.swift in Sources */,
+				75092EF226A88D330039C6D6 /* FeedTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +367,7 @@
 		};
 		7513B93B26A87EFD00C3CF01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F19124CA2C429289A9113F3D /* Pods-FINCH Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -335,6 +388,7 @@
 		};
 		7513B93C26A87EFD00C3CF01 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DC30F3CFF2C8B7223613DAA /* Pods-FINCH Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
