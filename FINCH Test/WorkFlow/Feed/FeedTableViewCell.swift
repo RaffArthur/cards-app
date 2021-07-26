@@ -29,11 +29,11 @@ class FeedTableViewCell: UITableViewCell {
     }()
     private lazy var cardDescription: UILabel = {
         let label = UILabel()
-        label.text = "Pellentesque metus urna, molestie id lobortis nec, venenatis eget est. Vivamus consectetur neque sapien. Nullam erat risus, varius at rutrum at, dapibus ac lacus. Sed quis arcu eros, ac aliquam purus. Vivamus sed diam nibh"
         label.font = .systemFont(ofSize: 14, weight: .medium)
         label.textColor = .lightGray
         label.textAlignment = .left
         label.numberOfLines = 3
+        label.text = "Pellentesque metus urna, molestie id lobortis nec, venenatis eget est. Vivamus consectetur neque sapien. Nullam erat risus, varius at rutrum at, dapibus ac lacus. Sed quis arcu eros, ac aliquam purus. Vivamus sed diam nibh"
         
         return label
     }()
@@ -44,23 +44,26 @@ class FeedTableViewCell: UITableViewCell {
         contentView.addSubview(cardDescription)
         
         cardImage.snp.makeConstraints { make in
-            make.width.equalTo(contentView.snp.height).offset(-32)
-            make.height.equalTo(contentView.snp.height).offset(-32)
-            make.leading.equalTo(contentView.snp.leading).offset(16)
-            make.centerY.equalTo(contentView.snp.centerY)
+            make.height.equalTo(100)
+            make.width.equalTo(cardImage.snp.height)
+            make.centerY.equalToSuperview()
+            make.top.equalToSuperview().offset(16)
+            make.leading.equalToSuperview().offset(16)
+            make.bottom.equalToSuperview().offset(-16)
         }
         
         cardTitle.snp.makeConstraints { make in
-            make.top.equalTo(contentView.snp.top).offset(16)
+            make.height.equalTo(28)
+            make.top.equalToSuperview().offset(16)
             make.leading.equalTo(cardImage.snp.trailing).offset(16)
-            make.trailing.equalTo(contentView.snp.trailing).offset(-16)
+            make.trailing.equalToSuperview().offset(-16)
         }
         
         cardDescription.snp.makeConstraints { make in
             make.top.equalTo(cardTitle.snp.bottom).offset(8)
             make.leading.equalTo(cardImage.snp.trailing).offset(16)
-            make.trailing.equalTo(contentView.snp.trailing).offset(-16)
-            make.bottom.equalTo(contentView.snp.bottom).offset(-16)
+            make.trailing.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview().offset(-16)
         }
 
     }

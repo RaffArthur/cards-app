@@ -43,15 +43,8 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .white
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        navigationItem.title = "Список"
-        navigationItem.leftBarButtonItem = removeAllCards
-        navigationItem.rightBarButtonItem = addNewCard
-        
-        setupLayout()
+    
+        setupScreen()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +53,20 @@ class FeedViewController: UIViewController {
         DispatchQueue.main.async { [self] in
             tableView.reloadData()
         }
+    }
+    
+    private func setupScreen() {
+        setupContent()
+        setupLayout()
+    }
+    
+    private func setupContent() {
+        view.backgroundColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        navigationItem.title = "Список"
+        navigationItem.leftBarButtonItem = removeAllCards
+        navigationItem.rightBarButtonItem = addNewCard
     }
     
     private func setupLayout() {
@@ -74,11 +81,13 @@ class FeedViewController: UIViewController {
     }
     
     @objc private func toAddNewCardScreen() {
-//        let habitVC = UINavigationController(rootViewController: HabitViewController(isInEditMode: false))
-//        habitVC.modalPresentationStyle = .fullScreen
-//        present(habitVC, animated: true, completion: nil)
-//
-//        collectionView.reloadData()
+        let cardVC = CardViewController()
+        
+        navigationController?.pushViewController(cardVC, animated: true)
+        
+        DispatchQueue.main.async { [self] in
+            tableView.reloadData()
+        }
     }
     
     @objc private func allCardsRemoved() {
