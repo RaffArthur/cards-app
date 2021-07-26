@@ -15,6 +15,7 @@
 		7513B92A26A87EFC00C3CF01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7513B92926A87EFC00C3CF01 /* AppDelegate.swift */; };
 		7513B93326A87EFD00C3CF01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7513B93226A87EFD00C3CF01 /* Assets.xcassets */; };
 		7513B93626A87EFD00C3CF01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7513B93426A87EFD00C3CF01 /* LaunchScreen.storyboard */; };
+		751F50A726AF29BA00C6AA35 /* CardsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F50A626AF29BA00C6AA35 /* CardsStorage.swift */; };
 		75C00E8426A8CD9D0052E464 /* FeedViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C00E8326A8CD9D0052E464 /* FeedViewControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		7513B93226A87EFD00C3CF01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7513B93526A87EFD00C3CF01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7513B93726A87EFD00C3CF01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		751F50A626AF29BA00C6AA35 /* CardsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsStorage.swift; sourceTree = "<group>"; };
 		75C00E8326A8CD9D0052E464 /* FeedViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerExtensions.swift; sourceTree = "<group>"; };
 		F19124CA2C429289A9113F3D /* Pods-FINCH Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FINCH Test.debug.xcconfig"; path = "Target Support Files/Pods-FINCH Test/Pods-FINCH Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +109,7 @@
 			children = (
 				7511674A26AC686B00E90E86 /* Card */,
 				7513B94026A882E500C3CF01 /* Feed */,
+				751F50A826AF29C600C6AA35 /* CardStorage */,
 			);
 			path = WorkFlow;
 			sourceTree = "<group>";
@@ -119,6 +122,14 @@
 				75C00E8326A8CD9D0052E464 /* FeedViewControllerExtensions.swift */,
 			);
 			path = Feed;
+			sourceTree = "<group>";
+		};
+		751F50A826AF29C600C6AA35 /* CardStorage */ = {
+			isa = PBXGroup;
+			children = (
+				751F50A626AF29BA00C6AA35 /* CardsStorage.swift */,
+			);
+			path = CardStorage;
 			sourceTree = "<group>";
 		};
 		CA742746475171C99883C986 /* Frameworks */ = {
@@ -245,6 +256,7 @@
 				75C00E8426A8CD9D0052E464 /* FeedViewControllerExtensions.swift in Sources */,
 				7513B92A26A87EFC00C3CF01 /* AppDelegate.swift in Sources */,
 				7511674E26AC689A00E90E86 /* CardViewController.swift in Sources */,
+				751F50A726AF29BA00C6AA35 /* CardsStorage.swift in Sources */,
 				75092EF026A88CC80039C6D6 /* FeedViewController.swift in Sources */,
 				75092EF226A88D330039C6D6 /* FeedTableViewCell.swift in Sources */,
 				7511674C26AC688900E90E86 /* CardView.swift in Sources */,
