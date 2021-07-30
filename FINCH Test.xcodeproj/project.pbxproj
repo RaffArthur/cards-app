@@ -10,13 +10,19 @@
 		0BDDCAC857A29756AC00F1EB /* Pods_FINCH_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31776B282731297600B746FC /* Pods_FINCH_Test.framework */; };
 		75092EF026A88CC80039C6D6 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75092EEF26A88CC80039C6D6 /* FeedViewController.swift */; };
 		75092EF226A88D330039C6D6 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75092EF126A88D330039C6D6 /* FeedTableViewCell.swift */; };
-		7511674C26AC688900E90E86 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7511674B26AC688900E90E86 /* CardView.swift */; };
 		7511674E26AC689A00E90E86 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7511674D26AC689A00E90E86 /* CardViewController.swift */; };
 		7513B92A26A87EFC00C3CF01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7513B92926A87EFC00C3CF01 /* AppDelegate.swift */; };
 		7513B93326A87EFD00C3CF01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7513B93226A87EFD00C3CF01 /* Assets.xcassets */; };
 		7513B93626A87EFD00C3CF01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7513B93426A87EFD00C3CF01 /* LaunchScreen.storyboard */; };
 		751F50A726AF29BA00C6AA35 /* CardsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F50A626AF29BA00C6AA35 /* CardsStorage.swift */; };
-		75C00E8426A8CD9D0052E464 /* FeedViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C00E8326A8CD9D0052E464 /* FeedViewControllerExtensions.swift */; };
+		751F50AD26B1F9FD00C6AA35 /* CardViewImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F50AC26B1F9FD00C6AA35 /* CardViewImagePickerControllerDelegate.swift */; };
+		751F50B226B2264000C6AA35 /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F50B126B2264000C6AA35 /* ColorSet.swift */; };
+		751F50B526B2F8CB00C6AA35 /* FeedTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F50B426B2F8CB00C6AA35 /* FeedTableViewDataSource.swift */; };
+		751F50B726B2F8DB00C6AA35 /* FeedTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F50B626B2F8DB00C6AA35 /* FeedTableViewDelegate.swift */; };
+		751F50B926B2F9C100C6AA35 /* CardViewTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F50B826B2F9C100C6AA35 /* CardViewTextFieldDelegate.swift */; };
+		751F50BB26B2FA1A00C6AA35 /* CardViewKeybordObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F50BA26B2FA1A00C6AA35 /* CardViewKeybordObserverDelegate.swift */; };
+		754BE10A26B321EC00AD79C3 /* SetupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BE10926B321EC00AD79C3 /* SetupScreen.swift */; };
+		754BE10D26B33B5900AD79C3 /* CardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BE10C26B33B5900AD79C3 /* CardDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +30,6 @@
 		6DC30F3CFF2C8B7223613DAA /* Pods-FINCH Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FINCH Test.release.xcconfig"; path = "Target Support Files/Pods-FINCH Test/Pods-FINCH Test.release.xcconfig"; sourceTree = "<group>"; };
 		75092EEF26A88CC80039C6D6 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		75092EF126A88D330039C6D6 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
-		7511674B26AC688900E90E86 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7511674D26AC689A00E90E86 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		7513B92626A87EFC00C3CF01 /* FINCH Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FINCH Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7513B92926A87EFC00C3CF01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +37,14 @@
 		7513B93526A87EFD00C3CF01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7513B93726A87EFD00C3CF01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		751F50A626AF29BA00C6AA35 /* CardsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsStorage.swift; sourceTree = "<group>"; };
-		75C00E8326A8CD9D0052E464 /* FeedViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerExtensions.swift; sourceTree = "<group>"; };
+		751F50AC26B1F9FD00C6AA35 /* CardViewImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewImagePickerControllerDelegate.swift; sourceTree = "<group>"; };
+		751F50B126B2264000C6AA35 /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
+		751F50B426B2F8CB00C6AA35 /* FeedTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewDataSource.swift; sourceTree = "<group>"; };
+		751F50B626B2F8DB00C6AA35 /* FeedTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewDelegate.swift; sourceTree = "<group>"; };
+		751F50B826B2F9C100C6AA35 /* CardViewTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewTextFieldDelegate.swift; sourceTree = "<group>"; };
+		751F50BA26B2FA1A00C6AA35 /* CardViewKeybordObserverDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewKeybordObserverDelegate.swift; sourceTree = "<group>"; };
+		754BE10926B321EC00AD79C3 /* SetupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupScreen.swift; sourceTree = "<group>"; };
+		754BE10C26B33B5900AD79C3 /* CardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewController.swift; sourceTree = "<group>"; };
 		F19124CA2C429289A9113F3D /* Pods-FINCH Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FINCH Test.debug.xcconfig"; path = "Target Support Files/Pods-FINCH Test/Pods-FINCH Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,8 +72,10 @@
 		7511674A26AC686B00E90E86 /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				7511674B26AC688900E90E86 /* CardView.swift */,
 				7511674D26AC689A00E90E86 /* CardViewController.swift */,
+				751F50AC26B1F9FD00C6AA35 /* CardViewImagePickerControllerDelegate.swift */,
+				751F50BA26B2FA1A00C6AA35 /* CardViewKeybordObserverDelegate.swift */,
+				751F50B826B2F9C100C6AA35 /* CardViewTextFieldDelegate.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -98,8 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				7513B92926A87EFC00C3CF01 /* AppDelegate.swift */,
-				7513B93226A87EFD00C3CF01 /* Assets.xcassets */,
 				7513B93426A87EFD00C3CF01 /* LaunchScreen.storyboard */,
+				7513B93226A87EFD00C3CF01 /* Assets.xcassets */,
 			);
 			path = ApplicationFlow;
 			sourceTree = "<group>";
@@ -107,9 +121,11 @@
 		7513B93E26A8827B00C3CF01 /* WorkFlow */ = {
 			isa = PBXGroup;
 			children = (
-				7511674A26AC686B00E90E86 /* Card */,
 				7513B94026A882E500C3CF01 /* Feed */,
+				7511674A26AC686B00E90E86 /* Card */,
+				754BE10B26B33B3700AD79C3 /* CardDetails */,
 				751F50A826AF29C600C6AA35 /* CardStorage */,
+				751F50B326B2264B00C6AA35 /* Helpers */,
 			);
 			path = WorkFlow;
 			sourceTree = "<group>";
@@ -119,7 +135,8 @@
 			children = (
 				75092EEF26A88CC80039C6D6 /* FeedViewController.swift */,
 				75092EF126A88D330039C6D6 /* FeedTableViewCell.swift */,
-				75C00E8326A8CD9D0052E464 /* FeedViewControllerExtensions.swift */,
+				751F50B426B2F8CB00C6AA35 /* FeedTableViewDataSource.swift */,
+				751F50B626B2F8DB00C6AA35 /* FeedTableViewDelegate.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -130,6 +147,23 @@
 				751F50A626AF29BA00C6AA35 /* CardsStorage.swift */,
 			);
 			path = CardStorage;
+			sourceTree = "<group>";
+		};
+		751F50B326B2264B00C6AA35 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				751F50B126B2264000C6AA35 /* ColorSet.swift */,
+				754BE10926B321EC00AD79C3 /* SetupScreen.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		754BE10B26B33B3700AD79C3 /* CardDetails */ = {
+			isa = PBXGroup;
+			children = (
+				754BE10C26B33B5900AD79C3 /* CardDetailsViewController.swift */,
+			);
+			path = CardDetails;
 			sourceTree = "<group>";
 		};
 		CA742746475171C99883C986 /* Frameworks */ = {
@@ -253,13 +287,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75C00E8426A8CD9D0052E464 /* FeedViewControllerExtensions.swift in Sources */,
 				7513B92A26A87EFC00C3CF01 /* AppDelegate.swift in Sources */,
 				7511674E26AC689A00E90E86 /* CardViewController.swift in Sources */,
 				751F50A726AF29BA00C6AA35 /* CardsStorage.swift in Sources */,
+				751F50B226B2264000C6AA35 /* ColorSet.swift in Sources */,
 				75092EF026A88CC80039C6D6 /* FeedViewController.swift in Sources */,
+				751F50BB26B2FA1A00C6AA35 /* CardViewKeybordObserverDelegate.swift in Sources */,
+				754BE10D26B33B5900AD79C3 /* CardDetailsViewController.swift in Sources */,
 				75092EF226A88D330039C6D6 /* FeedTableViewCell.swift in Sources */,
-				7511674C26AC688900E90E86 /* CardView.swift in Sources */,
+				751F50B726B2F8DB00C6AA35 /* FeedTableViewDelegate.swift in Sources */,
+				751F50AD26B1F9FD00C6AA35 /* CardViewImagePickerControllerDelegate.swift in Sources */,
+				754BE10A26B321EC00AD79C3 /* SetupScreen.swift in Sources */,
+				751F50B526B2F8CB00C6AA35 /* FeedTableViewDataSource.swift in Sources */,
+				751F50B926B2F9C100C6AA35 /* CardViewTextFieldDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
