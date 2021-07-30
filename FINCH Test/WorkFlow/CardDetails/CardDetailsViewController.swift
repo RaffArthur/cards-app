@@ -1,14 +1,21 @@
 //
-//  CardView.swift
+//  CardDetailsViewController.swift
 //  FINCH Test
 //
-//  Created by Arthur Raff on 24.07.2021.
+//  Created by Arthur Raff on 29.07.2021.
 //
 
 import UIKit
 
 @available(iOS 13.0, *)
-class CardView: UIView {
+class CardDetailsViewController: UIViewController {
+    public var card: Card? {
+        didSet {
+            guard let card = card  else { return }
+            
+            configure(card)
+        }
+    }
     private lazy var scrollView: UIScrollView = {
         let sv = UIScrollView()
         sv.isUserInteractionEnabled = true
@@ -24,9 +31,9 @@ class CardView: UIView {
     }()
     private lazy var cardPreview: UIImageView = {
         let iv = UIImageView()
-        iv.isUserInteractionEnabled = true
+        iv.isUserInteractionEnabled = false
         iv.backgroundColor = .systemGray
-        iv.image = UIImage(systemName: "photo")
+        iv.image = UIImage(systemName: "photo.on.rectangle.angled")
         iv.tintColor = .white
         iv.layer.cornerRadius = 16
         iv.layer.masksToBounds = true
@@ -35,52 +42,65 @@ class CardView: UIView {
     }()
     private lazy var cardTitle: UITextField = {
         let tf = UITextField()
-        tf.isUserInteractionEnabled = true
-        tf.placeholder = "Введите заголовок..."
-        tf.font = .systemFont(ofSize: 18, weight: .bold)
+        tf.isUserInteractionEnabled = false
+        tf.textColor = UIColor.appColor(.accentFontColor)
+        tf.font = .systemFont(ofSize: 24, weight: .bold)
         tf.textAlignment = .center
-        tf.clearButtonMode = .whileEditing
         
         return tf
-    }()
-    private lazy var cardDescriptionName: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 12, weight: .heavy)
-        label.textColor = .lightGray.withAlphaComponent(0.7)
-        label.text = "Введите описание:".uppercased()
-        
-        return label
     }()
     private lazy var cardDescription: UITextView = {
         let tv = UITextView()
         tv.isUserInteractionEnabled = true
-        tv.font = .systemFont(ofSize: 14, weight: .semibold)
+        tv.isEditable = false
+        tv.isScrollEnabled = true
+        tv.font = .systemFont(ofSize: 16, weight: .semibold)
+        tv.textColor = UIColor.appColor(.accentFontColor)
+        tv.backgroundColor = UIColor.appColor(.secondBackgroundColor)
         tv.layer.cornerRadius = 8
-        tv.layer.borderWidth = 2
-        tv.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.4).cgColor
         
         return tv
     }()
-    
-    override func layoutSubviews() {
-        setupLayout()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupScreen()
     }
     
+    private func configure(_ card: Card) {
+        cardTitle.text = card.title
+        cardDescription.text = card.description
+        cardPreview.image = UIImage(data: card.preview)
+        title = card.title
+    }
+}
+
+@available(iOS 13.0, *)
+extension CardDetailsViewController: SetupScreen {
+    private func setupScreen() {
+        setupLayout()
+        setupContent()
+    }
+    
+    private func setupContent() {
+        view.backgroundColor = UIColor.appColor(.accentBackgroundColor)
+    }
+
     private func setupLayout() {
-        addSubview(scrollView)
+        view.addSubview(scrollView)
         
         scrollView.addSubview(contentView)
         
         contentView.addSubview(cardPreview)
         contentView.addSubview(cardTitle)
-        contentView.addSubview(cardDescriptionName)
         contentView.addSubview(cardDescription)
         
         scrollView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading)
+            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         
         contentView.snp.makeConstraints { make in
@@ -93,7 +113,8 @@ class CardView: UIView {
         
         cardPreview.snp.makeConstraints { make in
             make.centerX.equalTo(contentView.snp.centerX)
-            make.size.equalTo(CGSize(width: 180, height: 180))
+            make.height.equalTo(200)
+            make.width.equalTo(cardPreview.snp.height)
             make.top.equalTo(contentView.snp.top).offset(16)
         }
         
@@ -106,16 +127,10 @@ class CardView: UIView {
 
         }
         
-        cardDescriptionName.snp.makeConstraints { make in
-            make.height.equalTo(20)
-            make.top.equalTo(cardTitle.snp.bottom).offset(16)
-            make.leading.equalTo(contentView.snp.leading).offset(16)
-        }
-        
         cardDescription.snp.makeConstraints { make in
-            make.height.equalTo(200)
+            make.height.equalToSuperview().dividedBy(2)
             make.centerX.equalTo(contentView.snp.centerX)
-            make.top.equalTo(cardDescriptionName.snp.bottom).offset(8)
+            make.top.equalTo(cardTitle.snp.bottom).offset(8)
             make.leading.equalTo(contentView.snp.leading).offset(16)
             make.trailing.equalTo(contentView.snp.trailing).offset(-16)
             make.bottom.equalTo(contentView.snp.bottom).offset(-16)
