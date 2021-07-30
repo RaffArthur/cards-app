@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         guard let window = window else { return false }
-        
+            
         window.rootViewController = UINavigationController(rootViewController: FeedViewController())
         window.makeKeyAndVisible()
         

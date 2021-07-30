@@ -33,7 +33,6 @@ class CardDetailsViewController: UIViewController {
         let iv = UIImageView()
         iv.isUserInteractionEnabled = false
         iv.backgroundColor = .systemGray
-        iv.image = UIImage(systemName: "photo.on.rectangle.angled")
         iv.tintColor = .white
         iv.layer.cornerRadius = 16
         iv.layer.masksToBounds = true

@@ -77,7 +77,6 @@ class CardViewController: UIViewController {
         
         return tv
     }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
