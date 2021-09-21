@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		398D53169B29C09A1669C146 /* Pods_FINCH_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE06E1452B976D3245B20273 /* Pods_FINCH_Test.framework */; };
 		75092EF026A88CC80039C6D6 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75092EEF26A88CC80039C6D6 /* FeedViewController.swift */; };
 		75092EF226A88D330039C6D6 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75092EF126A88D330039C6D6 /* FeedTableViewCell.swift */; };
 		7511674E26AC689A00E90E86 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7511674D26AC689A00E90E86 /* CardViewController.swift */; };
@@ -23,13 +22,16 @@
 		751F50BB26B2FA1A00C6AA35 /* CardViewKeybordObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F50BA26B2FA1A00C6AA35 /* CardViewKeybordObserverDelegate.swift */; };
 		754BE10A26B321EC00AD79C3 /* SetupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BE10926B321EC00AD79C3 /* SetupScreen.swift */; };
 		754BE10D26B33B5900AD79C3 /* CardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BE10C26B33B5900AD79C3 /* CardDetailsViewController.swift */; };
+		DE73A1C128C9FE6C93D1876A /* Pods_Cards_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C6B18D161AB98E3DCC5161 /* Pods_Cards_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		001572F3965FFFC54AE7501C /* Pods-Cards App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cards App.debug.xcconfig"; path = "Target Support Files/Pods-Cards App/Pods-Cards App.debug.xcconfig"; sourceTree = "<group>"; };
+		6128D50D33803793A21F4F8D /* Pods-Cards App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cards App.release.xcconfig"; path = "Target Support Files/Pods-Cards App/Pods-Cards App.release.xcconfig"; sourceTree = "<group>"; };
 		75092EEF26A88CC80039C6D6 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		75092EF126A88D330039C6D6 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		7511674D26AC689A00E90E86 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
-		7513B92626A87EFC00C3CF01 /* FINCH Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FINCH Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7513B92626A87EFC00C3CF01 /* Cards App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cards App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7513B92926A87EFC00C3CF01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7513B93226A87EFD00C3CF01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7513B93526A87EFD00C3CF01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,9 +45,7 @@
 		751F50BA26B2FA1A00C6AA35 /* CardViewKeybordObserverDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewKeybordObserverDelegate.swift; sourceTree = "<group>"; };
 		754BE10926B321EC00AD79C3 /* SetupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupScreen.swift; sourceTree = "<group>"; };
 		754BE10C26B33B5900AD79C3 /* CardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewController.swift; sourceTree = "<group>"; };
-		BE06E1452B976D3245B20273 /* Pods_FINCH_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FINCH_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCEDBC72426CBCDD4B862133 /* Pods-FINCH Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FINCH Test.release.xcconfig"; path = "Target Support Files/Pods-FINCH Test/Pods-FINCH Test.release.xcconfig"; sourceTree = "<group>"; };
-		F85882D9AED5E1D39B85BB33 /* Pods-FINCH Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FINCH Test.debug.xcconfig"; path = "Target Support Files/Pods-FINCH Test/Pods-FINCH Test.debug.xcconfig"; sourceTree = "<group>"; };
+		E3C6B18D161AB98E3DCC5161 /* Pods_Cards_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cards_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				398D53169B29C09A1669C146 /* Pods_FINCH_Test.framework in Frameworks */,
+				DE73A1C128C9FE6C93D1876A /* Pods_Cards_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,10 +63,18 @@
 		00EEEF81DEA5A8660813AD06 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F85882D9AED5E1D39B85BB33 /* Pods-FINCH Test.debug.xcconfig */,
-				CCEDBC72426CBCDD4B862133 /* Pods-FINCH Test.release.xcconfig */,
+				001572F3965FFFC54AE7501C /* Pods-Cards App.debug.xcconfig */,
+				6128D50D33803793A21F4F8D /* Pods-Cards App.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		56A062A76526EE6A319A14A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3C6B18D161AB98E3DCC5161 /* Pods_Cards_App.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7511674A26AC686B00E90E86 /* Card */ = {
@@ -83,29 +91,29 @@
 		7513B91D26A87EFC00C3CF01 = {
 			isa = PBXGroup;
 			children = (
-				7513B92826A87EFC00C3CF01 /* FINCH Test */,
+				7513B92826A87EFC00C3CF01 /* Cards App */,
 				7513B92726A87EFC00C3CF01 /* Products */,
 				00EEEF81DEA5A8660813AD06 /* Pods */,
-				D75418A9D253595558453452 /* Frameworks */,
+				56A062A76526EE6A319A14A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		7513B92726A87EFC00C3CF01 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7513B92626A87EFC00C3CF01 /* FINCH Test.app */,
+				7513B92626A87EFC00C3CF01 /* Cards App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7513B92826A87EFC00C3CF01 /* FINCH Test */ = {
+		7513B92826A87EFC00C3CF01 /* Cards App */ = {
 			isa = PBXGroup;
 			children = (
 				7513B93D26A8825E00C3CF01 /* ApplicationFlow */,
 				7513B93E26A8827B00C3CF01 /* WorkFlow */,
 				7513B93726A87EFD00C3CF01 /* Info.plist */,
 			);
-			path = "FINCH Test";
+			path = "Cards App";
 			sourceTree = "<group>";
 		};
 		7513B93D26A8825E00C3CF01 /* ApplicationFlow */ = {
@@ -166,34 +174,26 @@
 			path = CardDetails;
 			sourceTree = "<group>";
 		};
-		D75418A9D253595558453452 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BE06E1452B976D3245B20273 /* Pods_FINCH_Test.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7513B92526A87EFC00C3CF01 /* FINCH Test */ = {
+		7513B92526A87EFC00C3CF01 /* Cards App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7513B93A26A87EFD00C3CF01 /* Build configuration list for PBXNativeTarget "FINCH Test" */;
+			buildConfigurationList = 7513B93A26A87EFD00C3CF01 /* Build configuration list for PBXNativeTarget "Cards App" */;
 			buildPhases = (
-				4A5261D6E07C29BCE9B2358C /* [CP] Check Pods Manifest.lock */,
+				2DFCD7A00895F81299047012 /* [CP] Check Pods Manifest.lock */,
 				7513B92226A87EFC00C3CF01 /* Sources */,
 				7513B92326A87EFC00C3CF01 /* Frameworks */,
 				7513B92426A87EFC00C3CF01 /* Resources */,
-				F6E8B322F51DE3CFA4AD2E78 /* [CP] Embed Pods Frameworks */,
+				4C158BF4B8B2EF4883FD42C7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "FINCH Test";
+			name = "Cards App";
 			productName = "FINCH Test";
-			productReference = 7513B92626A87EFC00C3CF01 /* FINCH Test.app */;
+			productReference = 7513B92626A87EFC00C3CF01 /* Cards App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +210,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7513B92126A87EFC00C3CF01 /* Build configuration list for PBXProject "FINCH Test" */;
+			buildConfigurationList = 7513B92126A87EFC00C3CF01 /* Build configuration list for PBXProject "Cards App" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -223,7 +223,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7513B92526A87EFC00C3CF01 /* FINCH Test */,
+				7513B92526A87EFC00C3CF01 /* Cards App */,
 			);
 		};
 /* End PBXProject section */
@@ -241,7 +241,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4A5261D6E07C29BCE9B2358C /* [CP] Check Pods Manifest.lock */ = {
+		2DFCD7A00895F81299047012 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,28 +256,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FINCH Test-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Cards App-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6E8B322F51DE3CFA4AD2E78 /* [CP] Embed Pods Frameworks */ = {
+		4C158BF4B8B2EF4883FD42C7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FINCH Test/Pods-FINCH Test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Cards App/Pods-Cards App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FINCH Test/Pods-FINCH Test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Cards App/Pods-Cards App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FINCH Test/Pods-FINCH Test-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cards App/Pods-Cards App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -435,19 +435,19 @@
 		};
 		7513B93B26A87EFD00C3CF01 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F85882D9AED5E1D39B85BB33 /* Pods-FINCH Test.debug.xcconfig */;
+			baseConfigurationReference = 001572F3965FFFC54AE7501C /* Pods-Cards App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7FBKGHVJBQ;
-				INFOPLIST_FILE = "FINCH Test/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Cards App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.arthurraff.FINCH-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arthurraff.Cards-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -456,19 +456,19 @@
 		};
 		7513B93C26A87EFD00C3CF01 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCEDBC72426CBCDD4B862133 /* Pods-FINCH Test.release.xcconfig */;
+			baseConfigurationReference = 6128D50D33803793A21F4F8D /* Pods-Cards App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7FBKGHVJBQ;
-				INFOPLIST_FILE = "FINCH Test/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Cards App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.arthurraff.FINCH-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arthurraff.Cards-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -478,7 +478,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7513B92126A87EFC00C3CF01 /* Build configuration list for PBXProject "FINCH Test" */ = {
+		7513B92126A87EFC00C3CF01 /* Build configuration list for PBXProject "Cards App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7513B93826A87EFD00C3CF01 /* Debug */,
@@ -487,7 +487,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7513B93A26A87EFD00C3CF01 /* Build configuration list for PBXNativeTarget "FINCH Test" */ = {
+		7513B93A26A87EFD00C3CF01 /* Build configuration list for PBXNativeTarget "Cards App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7513B93B26A87EFD00C3CF01 /* Debug */,

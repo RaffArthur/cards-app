@@ -1,6 +1,6 @@
 //
 //  FeedViewController.swift
-//  FINCH Test
+//  Cards App
 //
 //  Created by Arthur Raff on 21.07.2021.
 //

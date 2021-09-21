@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7513B92526A87EFC00C3CF01"
-               BuildableName = "FINCH Test.app"
-               BlueprintName = "FINCH Test"
-               ReferencedContainer = "container:FINCH Test.xcodeproj">
+               BuildableName = "Cards App.app"
+               BlueprintName = "Cards App"
+               ReferencedContainer = "container:Cards App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7513B92526A87EFC00C3CF01"
-            BuildableName = "FINCH Test.app"
-            BlueprintName = "FINCH Test"
-            ReferencedContainer = "container:FINCH Test.xcodeproj">
+            BuildableName = "Cards App.app"
+            BlueprintName = "Cards App"
+            ReferencedContainer = "container:Cards App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7513B92526A87EFC00C3CF01"
-            BuildableName = "FINCH Test.app"
-            BlueprintName = "FINCH Test"
-            ReferencedContainer = "container:FINCH Test.xcodeproj">
+            BuildableName = "Cards App.app"
+            BlueprintName = "Cards App"
+            ReferencedContainer = "container:Cards App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
