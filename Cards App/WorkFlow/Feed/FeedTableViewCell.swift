@@ -63,7 +63,7 @@ class FeedTableViewCell: UITableViewCell {
 }
 
 @available(iOS 13.0, *)
-extension FeedTableViewCell: SetupScreen {
+extension FeedTableViewCell: ScreenSetup {
     private func setupCell() {
         setupLayout()
         setupContent()

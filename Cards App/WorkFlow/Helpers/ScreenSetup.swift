@@ -7,5 +7,4 @@
 
 import UIKit
 
-public protocol SetupScreen: AnyObject {
-}
+public protocol ScreenSetup: AnyObject { }

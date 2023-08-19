@@ -20,8 +20,10 @@
 		751F50B726B2F8DB00C6AA35 /* FeedTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F50B626B2F8DB00C6AA35 /* FeedTableViewDelegate.swift */; };
 		751F50B926B2F9C100C6AA35 /* CardViewTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F50B826B2F9C100C6AA35 /* CardViewTextFieldDelegate.swift */; };
 		751F50BB26B2FA1A00C6AA35 /* CardViewKeybordObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F50BA26B2FA1A00C6AA35 /* CardViewKeybordObserverDelegate.swift */; };
-		754BE10A26B321EC00AD79C3 /* SetupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BE10926B321EC00AD79C3 /* SetupScreen.swift */; };
+		754BE10A26B321EC00AD79C3 /* ScreenSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BE10926B321EC00AD79C3 /* ScreenSetup.swift */; };
 		754BE10D26B33B5900AD79C3 /* CardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BE10C26B33B5900AD79C3 /* CardDetailsViewController.swift */; };
+		75C88E7226FA2A6800EEEE3E /* FuncionalitySetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C88E7126FA2A6800EEEE3E /* FuncionalitySetup.swift */; };
+		75C88E7426FA499300EEEE3E /* UIBarButtonStateSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C88E7326FA499300EEEE3E /* UIBarButtonStateSetup.swift */; };
 		DE73A1C128C9FE6C93D1876A /* Pods_Cards_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C6B18D161AB98E3DCC5161 /* Pods_Cards_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,8 +45,10 @@
 		751F50B626B2F8DB00C6AA35 /* FeedTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewDelegate.swift; sourceTree = "<group>"; };
 		751F50B826B2F9C100C6AA35 /* CardViewTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewTextFieldDelegate.swift; sourceTree = "<group>"; };
 		751F50BA26B2FA1A00C6AA35 /* CardViewKeybordObserverDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewKeybordObserverDelegate.swift; sourceTree = "<group>"; };
-		754BE10926B321EC00AD79C3 /* SetupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupScreen.swift; sourceTree = "<group>"; };
+		754BE10926B321EC00AD79C3 /* ScreenSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSetup.swift; sourceTree = "<group>"; };
 		754BE10C26B33B5900AD79C3 /* CardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewController.swift; sourceTree = "<group>"; };
+		75C88E7126FA2A6800EEEE3E /* FuncionalitySetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncionalitySetup.swift; sourceTree = "<group>"; };
+		75C88E7326FA499300EEEE3E /* UIBarButtonStateSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonStateSetup.swift; sourceTree = "<group>"; };
 		E3C6B18D161AB98E3DCC5161 /* Pods_Cards_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cards_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -161,7 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				751F50B126B2264000C6AA35 /* ColorSet.swift */,
-				754BE10926B321EC00AD79C3 /* SetupScreen.swift */,
+				754BE10926B321EC00AD79C3 /* ScreenSetup.swift */,
+				75C88E7126FA2A6800EEEE3E /* FuncionalitySetup.swift */,
+				75C88E7326FA499300EEEE3E /* UIBarButtonStateSetup.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75C88E7426FA499300EEEE3E /* UIBarButtonStateSetup.swift in Sources */,
 				7513B92A26A87EFC00C3CF01 /* AppDelegate.swift in Sources */,
 				7511674E26AC689A00E90E86 /* CardViewController.swift in Sources */,
 				751F50A726AF29BA00C6AA35 /* CardsStorage.swift in Sources */,
@@ -297,8 +304,9 @@
 				75092EF226A88D330039C6D6 /* FeedTableViewCell.swift in Sources */,
 				751F50B726B2F8DB00C6AA35 /* FeedTableViewDelegate.swift in Sources */,
 				751F50AD26B1F9FD00C6AA35 /* CardViewImagePickerControllerDelegate.swift in Sources */,
-				754BE10A26B321EC00AD79C3 /* SetupScreen.swift in Sources */,
+				754BE10A26B321EC00AD79C3 /* ScreenSetup.swift in Sources */,
 				751F50B526B2F8CB00C6AA35 /* FeedTableViewDataSource.swift in Sources */,
+				75C88E7226FA2A6800EEEE3E /* FuncionalitySetup.swift in Sources */,
 				751F50B926B2F9C100C6AA35 /* CardViewTextFieldDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

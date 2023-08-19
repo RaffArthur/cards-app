@@ -73,6 +73,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "Cards App"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

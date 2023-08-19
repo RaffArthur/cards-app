@@ -34,9 +34,8 @@ class FeedViewController: UIViewController {
     private lazy var removeAllCards: UIBarButtonItem = {
         let bbi = UIBarButtonItem()
         bbi.title = "Очистить"
-        bbi.style = .plain
         bbi.target = self
-        bbi.action = #selector(allCardsRemoved)
+        bbi.action = #selector(showRemovingAllCardsAlert)
 
         return bbi
     }()
@@ -50,60 +49,13 @@ class FeedViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        DispatchQueue.main.async(qos: .background) { [self] in
-            tableView.reloadData()
-        }
-    }
-    
-    private func showDeletingAllCardsAlert() {
-        let alert = UIAlertController(title: "Предупреждение", message: "Вы собираетесь удалить все карточки, вы действительно этого хотите?", preferredStyle: .alert)
-        let approveAction = UIAlertAction(title: "Удалить", style: .destructive, handler: { _ in
-            CardsStore.shared.cards.removeAll()
-            
-            DispatchQueue.main.async(qos: .background) { [self] in
-                tableView.reloadData()
-            }
-        })
-        let denyAction = UIAlertAction(title: "Отказаться", style: .cancel, handler: nil)
-
-        alert.addAction(approveAction)
-        alert.addAction(denyAction)
-        
-        present(alert, animated: true, completion: nil)
-    }
-    
-    private func showEmptyCardsStoreAlert() {
-        let alert = UIAlertController(title: "Нет карточек", message: "Карточки отсуствуют или еще не были созданы", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "ОК", style: .cancel, handler: nil)
-        
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true, completion: nil)
-    }
-    
-    @objc private func toAddNewCardScreen() {
-        let cardVC = CardViewController()
-        
-        guard let navigationController = navigationController else { return }
-        
-        navigationController.pushViewController(cardVC, animated: true)
-        
-        DispatchQueue.main.async(qos: .background) { [self] in
-            tableView.reloadData()
-        }
-    }
-    
-    @objc private func allCardsRemoved() {
-        if CardsStore.shared.cards.isEmpty {
-            showEmptyCardsStoreAlert()
-        } else {
-            showDeletingAllCardsAlert()
-        }
+        ButtonsStateSetup.stateSetupFor(button: removeAllCards)
+        reloadTableViewData()
     }
 }
 
 @available(iOS 13.0, *)
-extension FeedViewController: SetupScreen {
+extension FeedViewController: ScreenSetup {
     private func setupScreen() {
         setupContent()
         setupLayout()
@@ -136,3 +88,100 @@ extension FeedViewController: SetupScreen {
         }
     }
 }
+
+@available(iOS 13.0, *)
+extension FeedViewController: FuncionalitySetup {
+    private func reloadTableViewData() {
+        DispatchQueue.main.async(qos: .userInteractive) { [weak self] in
+            guard let self = self else { return }
+            
+            self.tableView.reloadData()
+        }
+    }
+        
+    @objc private func toAddNewCardScreen() {
+        let cardVC = CardViewController()
+        
+        guard let navigationController = navigationController else { return }
+        
+        navigationController.pushViewController(cardVC, animated: true)
+        
+        reloadTableViewData()
+    }
+    
+    @objc private func showRemovingAllCardsAlert() {
+        let alertTitle = "Предупреждение"
+        let alertMessage = "Вы собираетесь удалить все карточки, вы действительно этого хотите?"
+        let actionApproveTitle = "Удалить"
+        let actiontDenyTitle = "Отказаться"
+
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        let approveAction = UIAlertAction(title: actionApproveTitle, style: .destructive) { [self] _ in
+            CardsStore.shared.cards.removeAll()
+            
+            ButtonsStateSetup.stateSetupFor(button: removeAllCards)
+
+            reloadTableViewData()
+        }
+        
+        let denyAction = UIAlertAction(title: actiontDenyTitle, style: .cancel, handler: nil)
+        
+        alert.addAction(approveAction)
+        alert.addAction(denyAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+}
+
+@available(iOS 13.0, *)
+extension FeedViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let cardDetailsVC = CardDetailsViewController()
+        cardDetailsVC.card = CardsStore.shared.cards[indexPath.item]
+        
+        guard let navigationController = navigationController else { return }
+        navigationController.pushViewController(cardDetailsVC, animated: true)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return CardsStore.shared.cards.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FeedTableViewCell.self), for: indexPath) as! FeedTableViewCell
+        
+        cell.card = CardsStore.shared.cards[indexPath.item]
+        
+        return cell
+    }
+}
+
+@available(iOS 13.0, *)
+extension FeedViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let trashAction = UIContextualAction(style: .destructive, title: "Удалить", handler: { [self] (action: UIContextualAction, view: UIView, success: (Bool) -> Void) in
+            
+            CardsStore.shared.cards.remove(at: indexPath.item)
+            
+            ButtonsStateSetup.stateSetupFor(button: removeAllCards)
+
+            tableView.deleteRows(at: [indexPath], with: .fade)
+
+            success(true)
+        })
+        
+        return UISwipeActionsConfiguration(actions: [trashAction])
+    }
+}
+

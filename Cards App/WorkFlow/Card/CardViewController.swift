@@ -77,6 +77,7 @@ class CardViewController: UIViewController {
         
         return tv
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -91,54 +92,10 @@ class CardViewController: UIViewController {
         
         removeKeyboardObserver()
     }
-    
-    private func showEmptyFieldsAlert() {
-        let alert = UIAlertController(title: navigationItem.title, message: "Заполните все поля", preferredStyle: .alert)
-        let action = UIAlertAction(title: "ОК", style: .cancel, handler: nil)
-        
-        alert.addAction(action)
-        
-        present(alert, animated: true, completion: nil)
-    }
-    
-    private func addGestureRecogniserToImageView(handler: UIImageView) {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(previewImageTapped))
-        handler.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
-    @objc private func saveCardButtonTapped() {
-        guard let image = cardPreview.image else { return }
-        guard let title = cardTitle.text else { return }
-        guard let description = cardDescription.text else { return }
-        guard let preview = image.jpegData(compressionQuality: 1) else { return }
-
-        let newCard = Card(title: title, description: description, preview: preview)
-                
-        if title.isEmpty || description.isEmpty {
-            showEmptyFieldsAlert()
-        } else {
-            CardsStore.shared.cards.insert(newCard, at: 0)
-
-            guard let navigationController = navigationController else { return }
-            navigationController.popToRootViewController(animated: true)
-        }
-    }
-        
-    @objc private func previewImageTapped() {
-        UIView.animateKeyframes(withDuration: 0.1, delay: 0, options: [.autoreverse]) { [self] in
-            cardPreview.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-        } completion: { [self] _ in
-            cardPreview.transform = CGAffineTransform(scaleX: 1, y: 1)
-        }
-
-        DispatchQueue.main.async(qos: .userInitiated) { [self] in
-            showImagePickerControllerActionSheet()
-        }
-    }
 }
 
 @available(iOS 13.0, *)
-extension CardViewController: SetupScreen {
+extension CardViewController: ScreenSetup {
     private func setupScreen() {
         setupLayout()
         setupContent()
@@ -205,6 +162,53 @@ extension CardViewController: SetupScreen {
             make.leading.equalTo(contentView.snp.leading).offset(16)
             make.trailing.equalTo(contentView.snp.trailing).offset(-16)
             make.bottom.equalTo(contentView.snp.bottom).offset(-16)
+        }
+    }
+}
+
+@available(iOS 13.0, *)
+extension CardViewController: FuncionalitySetup {
+    private func showEmptyFieldsAlert() {
+        let alert = UIAlertController(title: navigationItem.title, message: "Заполните все поля", preferredStyle: .alert)
+        let action = UIAlertAction(title: "ОК", style: .cancel, handler: nil)
+        
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func addGestureRecogniserToImageView(handler: UIImageView) {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(previewImageTapped))
+        handler.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc private func saveCardButtonTapped() {
+        guard let image = cardPreview.image else { return }
+        guard let title = cardTitle.text else { return }
+        guard let description = cardDescription.text else { return }
+        guard let preview = image.jpegData(compressionQuality: 1) else { return }
+
+        let newCard = Card(title: title, description: description, preview: preview)
+                
+        if title.isEmpty || description.isEmpty {
+            showEmptyFieldsAlert()
+        } else {
+            CardsStore.shared.cards.insert(newCard, at: 0)
+
+            guard let navigationController = navigationController else { return }
+            navigationController.popToRootViewController(animated: true)
+        }
+    }
+        
+    @objc private func previewImageTapped() {
+        UIView.animateKeyframes(withDuration: 0.1, delay: 0, options: [.autoreverse]) { [self] in
+            cardPreview.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        } completion: { [self] _ in
+            cardPreview.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
+
+        DispatchQueue.main.async(qos: .userInitiated) { [self] in
+            showImagePickerControllerActionSheet()
         }
     }
 }

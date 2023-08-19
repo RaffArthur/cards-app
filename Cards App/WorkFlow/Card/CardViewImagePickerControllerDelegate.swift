@@ -22,7 +22,7 @@ extension CardViewController: UIImagePickerControllerDelegate, UINavigationContr
             }
         }
     
-    func requestAuthorizationHandler(status: PHAuthorizationStatus) {
+    private func requestAuthorizationHandler(status: PHAuthorizationStatus) {
             if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
                 print("Доступ предоставлен для использования библиотеки фотографий")
             } else {
@@ -31,14 +31,18 @@ extension CardViewController: UIImagePickerControllerDelegate, UINavigationContr
         }
     
     func showImagePickerControllerActionSheet() {
-        let photoLibraryAction = UIAlertAction(title: "Открыть фотогалерею", style: .default) { [self] _ in
+        let photoLibraryAction = UIAlertAction(title: "Открыть фотогалерею", style: .default) { [weak self] _ in
             DispatchQueue.main.async(qos: .userInitiated) {
-                showImagePickerController(sourceType: .photoLibrary)
+                guard let self = self else { return }
+                
+                self.showImagePickerController(sourceType: .photoLibrary)
             }
         }
-        let cameraAction = UIAlertAction(title: "Сделать снимок", style: .default) { [self] _ in
+        let cameraAction = UIAlertAction(title: "Сделать снимок", style: .default) { [weak self] _ in
             DispatchQueue.main.async(qos: .userInitiated) {
-                showImagePickerController(sourceType: .camera)
+                guard let self = self else { return }
+
+                self.showImagePickerController(sourceType: .camera)
             }
         }
         let cancelAction = UIAlertAction(title: "Отменить", style: .cancel)
@@ -52,7 +56,7 @@ extension CardViewController: UIImagePickerControllerDelegate, UINavigationContr
         present(alertController, animated: true, completion: nil)
     }
     
-    func showImagePickerController(sourceType: UIImagePickerController.SourceType) {
+    private func showImagePickerController(sourceType: UIImagePickerController.SourceType) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = sourceType
         imagePickerController.allowsEditing = true
@@ -70,16 +74,20 @@ extension CardViewController: UIImagePickerControllerDelegate, UINavigationContr
             cardPreview.image = originalImage
         }
         
-        picker.dismiss(animated: true) { [self] in
-            cardTitle.becomeFirstResponder()
-            addKeyboardObserver()
+        picker.dismiss(animated: true) { [weak self] in
+            guard let self = self else { return }
+
+            self.cardTitle.becomeFirstResponder()
+            self.addKeyboardObserver()
         }
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true) { [self] in
-            cardTitle.becomeFirstResponder()
-            addKeyboardObserver()
+        picker.dismiss(animated: true) { [weak self] in
+            guard let self = self else { return }
+
+            self.cardTitle.becomeFirstResponder()
+            self.addKeyboardObserver()
         }
     }
 }

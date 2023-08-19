@@ -7,8 +7,8 @@
 
 import UIKit
 
-enum ColorSet: String {
-    case accentBackgroundColor, accentFontColor, secondBackgroundColor, secondFontColor
+public enum ColorSet: String {
+    case accentBackgroundColor, accentFontColor, secondBackgroundColor, secondFontColor, AccentColor
 }
 
 extension UIColor {
