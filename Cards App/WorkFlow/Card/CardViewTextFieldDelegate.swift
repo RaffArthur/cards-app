@@ -7,7 +7,6 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
 extension CardViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

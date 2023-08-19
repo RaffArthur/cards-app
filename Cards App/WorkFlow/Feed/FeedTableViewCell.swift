@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 
-@available(iOS 13.0, *)
 class FeedTableViewCell: UITableViewCell {
     public var card: Card? {
         didSet {
@@ -62,7 +61,6 @@ class FeedTableViewCell: UITableViewCell {
     }
 }
 
-@available(iOS 13.0, *)
 extension FeedTableViewCell: ScreenSetup {
     private func setupCell() {
         setupLayout()

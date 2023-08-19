@@ -7,7 +7,6 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
 class FeedViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tv = UITableView(frame: .zero, style: .plain)
@@ -54,7 +53,6 @@ class FeedViewController: UIViewController {
     }
 }
 
-@available(iOS 13.0, *)
 extension FeedViewController: ScreenSetup {
     private func setupScreen() {
         setupContent()
@@ -89,7 +87,6 @@ extension FeedViewController: ScreenSetup {
     }
 }
 
-@available(iOS 13.0, *)
 extension FeedViewController: FuncionalitySetup {
     private func reloadTableViewData() {
         DispatchQueue.main.async(qos: .userInteractive) { [weak self] in
@@ -133,7 +130,6 @@ extension FeedViewController: FuncionalitySetup {
     }
 }
 
-@available(iOS 13.0, *)
 extension FeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -162,7 +158,6 @@ extension FeedViewController: UITableViewDataSource {
     }
 }
 
-@available(iOS 13.0, *)
 extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

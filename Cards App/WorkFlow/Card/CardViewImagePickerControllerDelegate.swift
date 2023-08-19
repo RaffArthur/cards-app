@@ -8,7 +8,6 @@
 import UIKit
 import Photos
 
-@available(iOS 13.0, *)
 extension CardViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func checkPermissions() {
             if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.authorized {

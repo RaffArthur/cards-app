@@ -7,7 +7,6 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
 class CardDetailsViewController: UIViewController {
     public var card: Card? {
         didSet {
@@ -75,7 +74,6 @@ class CardDetailsViewController: UIViewController {
     }
 }
 
-@available(iOS 13.0, *)
 extension CardDetailsViewController: ScreenSetup {
     private func setupScreen() {
         setupLayout()

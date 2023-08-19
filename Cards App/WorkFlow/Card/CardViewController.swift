@@ -8,7 +8,6 @@
 import UIKit
 import Photos
 
-@available(iOS 13.0, *)
 class CardViewController: UIViewController {
     private lazy var saveCardBarButton: UIBarButtonItem = {
         let bbi = UIBarButtonItem()
@@ -94,7 +93,6 @@ class CardViewController: UIViewController {
     }
 }
 
-@available(iOS 13.0, *)
 extension CardViewController: ScreenSetup {
     private func setupScreen() {
         setupLayout()
@@ -166,7 +164,6 @@ extension CardViewController: ScreenSetup {
     }
 }
 
-@available(iOS 13.0, *)
 extension CardViewController: FuncionalitySetup {
     private func showEmptyFieldsAlert() {
         let alert = UIAlertController(title: navigationItem.title, message: "Заполните все поля", preferredStyle: .alert)

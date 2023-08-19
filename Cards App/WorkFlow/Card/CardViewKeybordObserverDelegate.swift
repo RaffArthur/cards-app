@@ -7,13 +7,11 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
 public protocol KeyboardObserverDelegate: AnyObject {
     func addKeyboardObserver()
     func removeKeyboardObserver()
 }
 
-@available(iOS 13.0, *)
 extension CardViewController: KeyboardObserverDelegate {
     func addKeyboardObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
