@@ -74,7 +74,7 @@ class CardDetailsViewController: UIViewController {
     }
 }
 
-extension CardDetailsViewController: ScreenSetup {
+extension CardDetailsViewController {
     private func setupScreen() {
         setupLayout()
         setupContent()

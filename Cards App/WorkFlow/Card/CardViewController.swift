@@ -93,7 +93,7 @@ class CardViewController: UIViewController {
     }
 }
 
-extension CardViewController: ScreenSetup {
+extension CardViewController {
     private func setupScreen() {
         setupLayout()
         setupContent()
@@ -164,7 +164,7 @@ extension CardViewController: ScreenSetup {
     }
 }
 
-extension CardViewController: FuncionalitySetup {
+extension CardViewController {
     private func showEmptyFieldsAlert() {
         let alert = UIAlertController(title: navigationItem.title, message: "Заполните все поля", preferredStyle: .alert)
         let action = UIAlertAction(title: "ОК", style: .cancel, handler: nil)
