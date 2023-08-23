@@ -13,6 +13,6 @@ extension UIView {
     }
     
     func add(subviews: [UIView]) {
-        subviews.forEach { self.addSubview($0) }
+        subviews.forEach { self.add(subview: $0) }
     }
 }
