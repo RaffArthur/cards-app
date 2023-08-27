@@ -6,8 +6,8 @@
 //
 
 import UIKit
+import SnapKit
 
-@available(iOS 13.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     

@@ -6,17 +6,8 @@
 //
 
 import UIKit
-import SnapKit
 
-@available(iOS 13.0, *)
-class FeedTableViewCell: UITableViewCell {
-    public var card: Card? {
-        didSet {
-            guard let card = card  else { return }
-            
-            configure(card)
-        }
-    }
+final class FeedTableViewCell: UITableViewCell {
     private lazy var cardPreview: UIImageView = {
         let iv = UIImageView()
         iv.layer.masksToBounds = true
@@ -24,6 +15,7 @@ class FeedTableViewCell: UITableViewCell {
         
         return iv
     }()
+    
     private lazy var cardTitle: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .bold)
@@ -34,6 +26,7 @@ class FeedTableViewCell: UITableViewCell {
         
         return label
     }()
+    
     private lazy var cardDescription: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .medium)
@@ -44,13 +37,7 @@ class FeedTableViewCell: UITableViewCell {
         
         return label
     }()
-    
-    private func configure(_ card: Card) {
-        cardTitle.text = card.title
-        cardDescription.text = card.description
-        cardPreview.image = UIImage(data: card.preview)
-    }
-    
+        
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -62,17 +49,16 @@ class FeedTableViewCell: UITableViewCell {
     }
 }
 
-@available(iOS 13.0, *)
-extension FeedTableViewCell: ScreenSetup {
-    private func setupCell() {
+private extension FeedTableViewCell {
+    func setupCell() {
         setupLayout()
         setupContent()
     }
     
-    private func setupLayout() {
-        contentView.addSubview(cardPreview)
-        contentView.addSubview(cardTitle)
-        contentView.addSubview(cardDescription)
+    func setupLayout() {
+        contentView.add(subviews: [cardPreview,
+                                   cardTitle,
+                                   cardDescription])
         
         cardPreview.snp.makeConstraints { make in
             make.height.equalTo(100)
@@ -96,7 +82,15 @@ extension FeedTableViewCell: ScreenSetup {
         }
     }
     
-    private func setupContent() {
+    func setupContent() {
         backgroundColor = UIColor.appColor(.accentBackgroundColor)
+    }
+}
+
+extension FeedTableViewCell {
+    func configure(card: Card) {
+        cardTitle.text = card.title
+        cardDescription.text = card.description
+        cardPreview.image = UIImage(data: card.preview)
     }
 }
