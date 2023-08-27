@@ -147,8 +147,10 @@ extension FeedViewController: FeedViewDelegate {
     
     func showFullCardDetailsScreenBy(index: Int) {
         let cardDetailsVC = CardDetailsViewController()
-        cardDetailsVC.card = CardsStore.shared.cards[index]
-
+        let currentCard = CardsStore.shared.cards[index]
+        
+        cardDetailsVC.setupCard(card: currentCard)
+        
         navigationController?.pushViewController(cardDetailsVC, animated: true)
     }
 }

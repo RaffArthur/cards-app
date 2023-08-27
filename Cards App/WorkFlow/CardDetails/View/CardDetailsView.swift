@@ -1,20 +1,13 @@
 //
-//  CardDetailsViewController.swift
+//  CardDetailsView.swift
 //  Cards App
 //
-//  Created by Arthur Raff on 29.07.2021.
+//  Created by Arthur Raff on 23.08.2023.
 //
 
 import UIKit
 
-class CardDetailsViewController: UIViewController {
-    public var card: Card? {
-        didSet {
-            guard let card = card  else { return }
-            
-            configure(card)
-        }
-    }
+final class CardDetailsView: UIView {
     private lazy var scrollView: UIScrollView = {
         let sv = UIScrollView()
         sv.isUserInteractionEnabled = true
@@ -23,11 +16,13 @@ class CardDetailsViewController: UIViewController {
         
         return sv
     }()
+    
     private lazy var contentView: UIView = {
         let view = UIView()
         
         return view
     }()
+    
     private lazy var cardPreview: UIImageView = {
         let iv = UIImageView()
         iv.isUserInteractionEnabled = false
@@ -38,6 +33,7 @@ class CardDetailsViewController: UIViewController {
         
         return iv
     }()
+    
     private lazy var cardTitle: UITextField = {
         let tf = UITextField()
         tf.isUserInteractionEnabled = false
@@ -47,6 +43,7 @@ class CardDetailsViewController: UIViewController {
         
         return tf
     }()
+    
     private lazy var cardDescription: UITextView = {
         let tv = UITextView()
         tv.isUserInteractionEnabled = true
@@ -59,45 +56,39 @@ class CardDetailsViewController: UIViewController {
         
         return tv
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)        
         
         setupScreen()
     }
     
-    private func configure(_ card: Card) {
-        cardTitle.text = card.title
-        cardDescription.text = card.description
-        cardPreview.image = UIImage(data: card.preview)
-        title = card.title
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
-extension CardDetailsViewController {
-    private func setupScreen() {
+private extension CardDetailsView {
+    func setupScreen() {
         setupLayout()
         setupContent()
     }
     
-    private func setupContent() {
-        view.backgroundColor = UIColor.appColor(.accentBackgroundColor)
+    func setupContent() {
+        
     }
-
-    private func setupLayout() {
-        view.addSubview(scrollView)
+    
+    func setupLayout() {
+        add(subview: scrollView)
         
-        scrollView.addSubview(contentView)
+        scrollView.add(subview: contentView)
         
-        contentView.addSubview(cardPreview)
-        contentView.addSubview(cardTitle)
-        contentView.addSubview(cardDescription)
+        contentView.add(subviews: [cardPreview,
+                                   cardTitle,
+                                   cardDescription])
         
         scrollView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading)
-            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.edges.equalToSuperview()
         }
         
         contentView.snp.makeConstraints { make in
@@ -132,5 +123,13 @@ extension CardDetailsViewController {
             make.trailing.equalTo(contentView.snp.trailing).offset(-16)
             make.bottom.equalTo(contentView.snp.bottom).offset(-16)
         }
+    }
+}
+
+extension CardDetailsView {
+    func prepareCard(card: Card) {
+        cardTitle.text = card.title
+        cardDescription.text = card.description
+        cardPreview.image = UIImage(data: card.preview)
     }
 }
