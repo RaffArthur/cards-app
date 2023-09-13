@@ -7,10 +7,10 @@
 
 import UIKit
 
-class CardDetailsViewController: UIViewController {
+final class CardDetailsViewController: UIViewController {
     private lazy var cardDetailsView: CardDetailsView = {
         let cdv = CardDetailsView()
-        
+
         return cdv
     }()
     
@@ -19,24 +19,19 @@ class CardDetailsViewController: UIViewController {
                 
         setupScreen()
     }
+    
+    override func loadView() {
+        view = cardDetailsView
+    }
 }
 
 private extension CardDetailsViewController {
     func setupScreen() {
-        setupLayout()
         setupContent()
     }
     
     func setupContent() {
         view.backgroundColor = UIColor.appColor(.accentBackgroundColor)
-    }
-
-    func setupLayout() {
-        view.add(subview: cardDetailsView)
-        
-        cardDetailsView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
     }
 }
 
