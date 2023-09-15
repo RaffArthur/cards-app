@@ -19,7 +19,6 @@
 		75B1D33A2A9BE78500077FEE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 75B1D3392A9BE78500077FEE /* SnapKit */; };
 		75B1D33D2A9BE82D00077FEE /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 75B1D33C2A9BE82D00077FEE /* IQKeyboardManagerSwift */; };
 		75ED98412A91078B00B5332D /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ED98402A91078B00B5332D /* FeedView.swift */; };
-		75ED98452A9109E800B5332D /* FeedDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ED98442A9109E800B5332D /* FeedDelegates.swift */; };
 		75ED98492A9113FE00B5332D /* AddSubviews+UIVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ED98482A9113FE00B5332D /* AddSubviews+UIVew.swift */; };
 		75ED984E2A928ABE00B5332D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ED984D2A928ABE00B5332D /* CardView.swift */; };
 		75ED98502A928E2C00B5332D /* CardDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ED984F2A928E2C00B5332D /* CardDelegates.swift */; };
@@ -40,7 +39,6 @@
 		751F50B126B2264000C6AA35 /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
 		754BE10C26B33B5900AD79C3 /* CardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewController.swift; sourceTree = "<group>"; };
 		75ED98402A91078B00B5332D /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
-		75ED98442A9109E800B5332D /* FeedDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDelegates.swift; sourceTree = "<group>"; };
 		75ED98482A9113FE00B5332D /* AddSubviews+UIVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddSubviews+UIVew.swift"; sourceTree = "<group>"; };
 		75ED984D2A928ABE00B5332D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		75ED984F2A928E2C00B5332D /* CardDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDelegates.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 		7513B94026A882E500C3CF01 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				75ED98442A9109E800B5332D /* FeedDelegates.swift */,
 				75ED98462A910A8D00B5332D /* View */,
 				75ED984A2A9255DF00B5332D /* Cell */,
 			);
@@ -272,7 +269,6 @@
 				75ED98562A960CCF00B5332D /* CardDetailsView.swift in Sources */,
 				7511674E26AC689A00E90E86 /* CardViewController.swift in Sources */,
 				75ED98542A94E34700B5332D /* AddActions+UIAllertController.swift in Sources */,
-				75ED98452A9109E800B5332D /* FeedDelegates.swift in Sources */,
 				751F50A726AF29BA00C6AA35 /* CardsStorage.swift in Sources */,
 				75ED98502A928E2C00B5332D /* CardDelegates.swift in Sources */,
 				751F50B226B2264000C6AA35 /* ColorSet.swift in Sources */,
