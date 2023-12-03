@@ -10,7 +10,6 @@ import UIKit
 final class FeedViewController: UIViewController {
     private lazy var feedView: FeedView = {
         let fv = FeedView()
-        fv.delegate = self
         
         return fv
     }()
@@ -34,11 +33,17 @@ final class FeedViewController: UIViewController {
         super.viewDidLoad()
         
         feedView.reloadTableViewData()
+        feedView.setupTableView(dataSource: self,
+                                delegate: self)
         
         setupStateForRemoveAllCardsButton()
         
         setupScreen()
         setupActions()
+    }
+    
+    override func loadView() {
+        view = feedView
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,15 +58,6 @@ final class FeedViewController: UIViewController {
 private extension FeedViewController {
     func setupScreen() {
         setupContent()
-        setupLayout()
-    }
-    
-    func setupLayout() {
-        view.add(subview: feedView)
-        
-        feedView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
-        }
     }
     
     func setupContent() {
@@ -70,7 +66,7 @@ private extension FeedViewController {
         navigationItem.title = "Мои карточки"
         navigationItem.leftBarButtonItem = removeAllCardsButton
         navigationItem.rightBarButtonItem = addNewCardButton
-                
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         
         let backItem = UIBarButtonItem()
@@ -83,7 +79,8 @@ private extension FeedViewController {
     @objc func addNewCardButtonHasBeenTapped() {
         let cardVC = CardViewController()
                 
-        navigationController?.pushViewController(cardVC, animated: true)
+        navigationController?.pushViewController(cardVC,
+                                                 animated: true)
     }
     
     @objc func removeAllCardsButtonHasBeenTapped() {
@@ -96,12 +93,12 @@ private extension FeedViewController {
                                       message: alertMessage,
                                       preferredStyle: .alert)
         let approveAction = UIAlertAction(title: actionApproveTitle,
-                                          style: .destructive) { [self] _ in
+                                          style: .destructive) { [weak self] _ in
             CardsStore.shared.cards.removeAll()
             
-            feedView.reloadTableViewData()
+            self?.feedView.reloadTableViewData()
             
-            setupStateForRemoveAllCardsButton()
+            self?.setupStateForRemoveAllCardsButton()
         }
         
         let denyAction = UIAlertAction(title: actiontDenyTitle,
@@ -111,7 +108,9 @@ private extension FeedViewController {
         alert.addAction(approveAction)
         alert.addAction(denyAction)
         
-        present(alert, animated: true, completion: nil)
+        present(alert,
+                animated: true,
+                completion: nil)
     }
 }
 
@@ -138,19 +137,69 @@ private extension FeedViewController {
     }
 }
 
-extension FeedViewController: FeedViewDelegate {
-    func removeCardBy(index: Int) {
-        CardsStore.shared.cards.remove(at: index)
+extension FeedViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath,
+                              animated: true)
         
-        setupStateForRemoveAllCardsButton()
-    }
-    
-    func showFullCardDetailsScreenBy(index: Int) {
         let cardDetailsVC = CardDetailsViewController()
-        let currentCard = CardsStore.shared.cards[index]
+        let currentCard = CardsStore.shared.cards[indexPath.item]
         
         cardDetailsVC.setupCard(card: currentCard)
         
-        navigationController?.pushViewController(cardDetailsVC, animated: true)
+        navigationController?.pushViewController(cardDetailsVC,
+                                                 animated: true)
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
+        return CardsStore.shared.cards.count
+    }
+
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = String(describing: FeedTableViewCell.self)
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier,
+                                                 for: indexPath) as? FeedTableViewCell
+        
+        guard
+            let cell = cell
+        else {
+            return UITableViewCell()
+        }
+        
+        cell.configure(card: CardsStore.shared.cards[indexPath.item])
+
+        return cell
+    }
+}
+
+extension FeedViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let trashAction = UIContextualAction(style: .destructive,
+                                             title: "Удалить") { [weak self] action, view, success in
+
+            CardsStore.shared.cards.remove(at: indexPath.item)
+            
+            self?.setupStateForRemoveAllCardsButton()
+            
+            tableView.deleteRows(at: [indexPath],
+                                 with: .fade)
+            
+            success(true)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [trashAction])
     }
 }

@@ -38,8 +38,10 @@ final class FeedTableViewCell: UITableViewCell {
         return label
     }()
         
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(style: UITableViewCell.CellStyle,
+                  reuseIdentifier: String?) {
+        super.init(style: style,
+                   reuseIdentifier: reuseIdentifier)
         
         setupCell()
     }
@@ -60,25 +62,25 @@ private extension FeedTableViewCell {
                                    cardTitle,
                                    cardDescription])
         
-        cardPreview.snp.makeConstraints { make in
-            make.height.equalTo(100)
-            make.width.equalTo(cardPreview.snp.height)
-            make.centerY.equalToSuperview()
-            make.top.equalToSuperview().offset(16)
-            make.leading.equalToSuperview().offset(16)
-            make.bottom.equalToSuperview().offset(-16)
+        cardPreview.snp.makeConstraints {
+            $0.height.equalTo(100)
+            $0.width.equalTo(cardPreview.snp.height)
+            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview().offset(16)
+            $0.leading.equalToSuperview().offset(16)
+            $0.bottom.equalToSuperview().offset(-16)
         }
         
-        cardTitle.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(16)
-            make.leading.equalTo(cardPreview.snp.trailing).offset(16)
-            make.trailing.equalToSuperview().offset(-16)
+        cardTitle.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(16)
+            $0.leading.equalTo(cardPreview.snp.trailing).offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
         }
         
-        cardDescription.snp.makeConstraints { make in
-            make.top.equalTo(cardTitle.snp.bottom).offset(8)
-            make.leading.equalTo(cardPreview.snp.trailing).offset(16)
-            make.trailing.equalToSuperview().offset(-16)
+        cardDescription.snp.makeConstraints {
+            $0.top.equalTo(cardTitle.snp.bottom).offset(8)
+            $0.leading.equalTo(cardPreview.snp.trailing).offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
         }
     }
     

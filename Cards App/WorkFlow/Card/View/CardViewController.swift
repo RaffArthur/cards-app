@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 
-class CardViewController: UIViewController {
+final class CardViewController: UIViewController {
     private lazy var cardView: CardView = {
         let cv = CardView()
         
@@ -33,11 +33,14 @@ class CardViewController: UIViewController {
         
         setupScreen()
     }
+    
+    override func loadView() {
+        view = cardView
+    }
 }
 
 extension CardViewController {
     private func setupScreen() {
-        setupLayout()
         setupContent()
     }
     
@@ -46,14 +49,6 @@ extension CardViewController {
         
         navigationItem.title = "Новая карточка"
         navigationItem.rightBarButtonItem = saveCardBarButton
-    }
-
-    private func setupLayout() {
-        view.add(subview: cardView)
-        
-        cardView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
     }
 }
 
@@ -98,14 +93,16 @@ extension CardViewController {
 
 extension CardViewController: CardViewDelegate {
     func imageChangePreviewTapped() {
-        UIView.animateKeyframes(withDuration: 0.1, delay: 0, options: [.autoreverse]) { [self] in
-            cardView.userImage?.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-        } completion: { [self] _ in
-            cardView.userImage?.transform = CGAffineTransform(scaleX: 1, y: 1)
+        UIView.animateKeyframes(withDuration: 0.1,
+                                delay: 0,
+                                options: [.autoreverse]) { [weak self] in
+            self?.cardView.userImage?.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        } completion: { [weak self] _ in
+            self?.cardView.userImage?.transform = CGAffineTransform(scaleX: 1, y: 1)
         }
 
-        DispatchQueue.main.async(qos: .userInitiated) { [self] in
-            showImagePickerControllerActionSheet()
+        DispatchQueue.main.async(qos: .userInitiated) { [weak self] in
+            self?.showImagePickerControllerActionSheet()
         }
     }
 }
@@ -156,7 +153,6 @@ extension CardViewController: UIImagePickerControllerDelegate, UINavigationContr
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-                
         let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         
         cardView.userImage?.image = editedImage

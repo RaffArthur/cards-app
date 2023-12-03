@@ -75,7 +75,7 @@ private extension CardDetailsView {
     }
     
     func setupContent() {
-        
+        backgroundColor = .white
     }
     
     func setupLayout() {
@@ -87,41 +87,41 @@ private extension CardDetailsView {
                                    cardTitle,
                                    cardDescription])
         
-        scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        scrollView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
         
-        contentView.snp.makeConstraints { make in
-            make.width.equalTo(scrollView.snp.width)
-            make.top.equalTo(scrollView.snp.top)
-            make.leading.equalTo(scrollView.snp.leading)
-            make.trailing.equalTo(scrollView.snp.trailing)
-            make.bottom.equalTo(scrollView.snp.bottom)
+        contentView.snp.makeConstraints {
+            $0.width.equalTo(scrollView.snp.width)
+            $0.top.equalTo(scrollView.snp.top)
+            $0.leading.equalTo(scrollView.snp.leading)
+            $0.trailing.equalTo(scrollView.snp.trailing)
+            $0.bottom.equalTo(scrollView.snp.bottom)
         }
         
-        cardPreview.snp.makeConstraints { make in
-            make.centerX.equalTo(contentView.snp.centerX)
-            make.height.equalTo(200)
-            make.width.equalTo(cardPreview.snp.height)
-            make.top.equalTo(contentView.snp.top).offset(16)
+        cardPreview.snp.makeConstraints {
+            $0.centerX.equalTo(contentView.snp.centerX)
+            $0.height.equalTo(200)
+            $0.width.equalTo(cardPreview.snp.height)
+            $0.top.equalTo(contentView.snp.top).offset(16)
         }
         
-        cardTitle.snp.makeConstraints { make in
-            make.height.equalTo(48)
-            make.centerX.equalTo(contentView.snp.centerX)
-            make.top.equalTo(cardPreview.snp.bottom).offset(8)
-            make.leading.equalTo(contentView.snp.leading).offset(16)
-            make.trailing.equalTo(contentView.snp.trailing).offset(-16)
+        cardTitle.snp.makeConstraints {
+            $0.height.equalTo(48)
+            $0.centerX.equalTo(contentView.snp.centerX)
+            $0.top.equalTo(cardPreview.snp.bottom).offset(8)
+            $0.leading.equalTo(contentView.snp.leading).offset(16)
+            $0.trailing.equalTo(contentView.snp.trailing).offset(-16)
 
         }
         
-        cardDescription.snp.makeConstraints { make in
-            make.height.equalToSuperview().dividedBy(2)
-            make.centerX.equalTo(contentView.snp.centerX)
-            make.top.equalTo(cardTitle.snp.bottom).offset(8)
-            make.leading.equalTo(contentView.snp.leading).offset(16)
-            make.trailing.equalTo(contentView.snp.trailing).offset(-16)
-            make.bottom.equalTo(contentView.snp.bottom).offset(-16)
+        cardDescription.snp.makeConstraints {
+            $0.height.equalToSuperview().dividedBy(2)
+            $0.centerX.equalTo(contentView.snp.centerX)
+            $0.top.equalTo(cardTitle.snp.bottom).offset(8)
+            $0.leading.equalTo(contentView.snp.leading).offset(16)
+            $0.trailing.equalTo(contentView.snp.trailing).offset(-16)
+            $0.bottom.equalTo(contentView.snp.bottom).offset(-16)
         }
     }
 }
